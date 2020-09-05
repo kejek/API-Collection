@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "3b307753-2593-46ec-92f7-0edf2e507211",
+		"name": "Laravel Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "Authorize User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "token",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "3d9533e1-3487-4137-9e00-1d077f5805cb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "084d58a7-1a53-4b13-a011-6ddaa92469ac",
+				"type": "text/javascript",
+				"exec": [
+					"var jsonData = JSON.parse(responseBody);",
+					"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "b5e99ff4-4fea-4ed0-a8cd-a372af4f4b06",
+			"key": "url",
+			"value": "http://localhost:8000/"
+		},
+		{
+			"id": "8c8f0b70-ff31-4d2f-aab3-ff3592b14c55",
+			"key": "client",
+			"value": "1"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
